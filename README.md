@@ -1,2 +1,2 @@
-# Competitive_Programming_Set1
+# Competitive_Programming
 This repository consists of solutions to problems of contest at codeforces in c++
