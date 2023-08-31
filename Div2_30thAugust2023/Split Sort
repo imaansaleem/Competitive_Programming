@@ -1,0 +1,33 @@
+/* Link:
+https://codeforces.com/contest/1863/problem/B
+*/
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int decision(vector<int>x, unordered_map<int, int>m){
+    int violation = 0;
+    sort(x.begin(), x.end());
+    for(int i=0;i<x.size()-1;i++){
+        if(m[x[i]]>m[x[i]+1])
+            violation++;
+    }
+    return violation;
+}
+
+int main()
+{
+    int testcases, n;
+    cin >> testcases;
+    for(int i=0;i<testcases;i++){
+        cin >> n;
+        vector<int>x(n);
+        unordered_map<int, int>m;
+        for(int j=0;j<n;j++){
+            cin >> x[j];
+            m[x[j]] = j;
+        }
+        cout << decision(x, m)  << endl;
+    }
+    return 0;
+}
